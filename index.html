@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Field Operations Intelligence — Mining & Explosives Industry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --orange:#D4580A;
+  --orange-2:#E8610A;
+  --orange-light:#FFF4EE;
+  --orange-mid:#FDDCC8;
+  --orange-border:#F5BFA0;
+  --dark:#0F1117;
+  --dark-2:#1C1F2A;
+  --text:#1A1D27;
+  --text-2:#4A4F63;
+  --text-3:#8A8FA8;
+  --bg:#FFFFFF;
+  --bg-2:#F8F9FC;
+  --bg-3:#F0F2F7;
+  --border:#E2E5EF;
+  --border-2:#CDD1E0;
+  --green:#0DAB5F;
+  --green-light:#EDFAF3;
+  --blue:#1D6FEB;
+  --blue-light:#EEF4FF;
+  --amber:#D97706;
+  --amber-light:#FFFBEB;
+  --red:#DC2626;
+  --red-light:#FEF2F2;
+  --radius:10px;
+  --radius-lg:16px;
+  --radius-xl:24px;
+  --shadow:0 1px 3px rgba(0,0,0,0.06),0 4px 16px rgba(0,0,0,0.04);
+  --shadow-lg:0 4px 24px rgba(0,0,0,0.08),0 16px 48px rgba(0,0,0,0.06);
+}
+
+html{scroll-behavior:smooth}
+body{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 6%;
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  height:64px;
+}
+.nav-logo{
+  display:flex;align-items:center;gap:10px;
+}
+.nav-logo-icon{
+  width:32px;height:32px;border-radius:8px;
+  background:var(--orange);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;
+}
+.nav-logo-text{
+  font-size:15px;font-weight:700;color:var(--text);
+  letter-spacing:-0.3px;
+}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{
+  font-size:13px;font-weight:500;
+  color:var(--text-2);text-decoration:none;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{
+  font-size:13px;font-weight:600;
+  padding:8px 20px;border-radius:6px;
+  background:var(--orange);color:#fff;
+  text-decoration:none;
+  transition:background 0.2s,transform 0.15s;
+}
+.nav-cta:hover{background:var(--orange-2);transform:translateY(-1px)}
+
+/* ── CONTAINER ── */
+.container{max-width:1200px;margin:0 auto;padding:0 6%}
+section{padding:88px 0}
+
+/* ── EYEBROW ── */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:600;letter-spacing:0.8px;
+  text-transform:uppercase;color:var(--orange);
+  margin-bottom:16px;
+}
+.eyebrow::before{
+  content:'';display:block;width:24px;height:2px;
+  background:var(--orange);border-radius:2px;
+}
+
+/* ── HERO ── */
+#hero{
+  background:var(--bg);
+  padding:100px 0 80px;
+  border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.hero-bg-pattern{
+  position:absolute;inset:0;
+  background-image:radial-gradient(var(--border) 1px,transparent 1px);
+  background-size:28px 28px;
+  opacity:0.6;pointer-events:none;
+}
+.hero-inner{
+  max-width:1200px;margin:0 auto;padding:0 6%;
+  position:relative;z-index:1;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:600;
+  color:var(--orange);
+  background:var(--orange-light);
+  border:1px solid var(--orange-border);
+  padding:6px 16px;border-radius:40px;
+  margin-bottom:28px;
+}
+.hero-badge .dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--orange);
+  animation:pulse 2s ease infinite;
+}
+#hero h1{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(38px,5.5vw,68px);
+  font-weight:800;line-height:1.08;
+  letter-spacing:-2px;color:var(--text);
+  max-width:800px;margin-bottom:20px;
+}
+#hero h1 em{font-style:normal;color:var(--orange)}
+#hero h1 .soft{color:var(--text-2);font-weight:600}
+.hero-desc{
+  font-size:17px;color:var(--text-2);
+  max-width:560px;line-height:1.75;
+  margin-bottom:44px;font-weight:400;
+}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;border:1px solid var(--border);
+  border-radius:var(--radius-lg);overflow:hidden;
+  background:var(--bg-2);max-width:720px;
+}
+.h-stat{
+  padding:20px 24px;
+  border-right:1px solid var(--border);
+  text-align:center;
+}
+.h-stat:last-child{border-right:none}
+.h-stat .n{
+  font-size:28px;font-weight:800;
+  color:var(--orange);letter-spacing:-1px;
+  line-height:1;display:block;margin-bottom:4px;
+}
+.h-stat .l{font-size:11px;color:var(--text-3);font-weight:500;line-height:1.3}
+
+/* ── INTRO ── */
+#intro{background:var(--bg-2);padding:60px 0}
+.intro-inner{
+  max-width:1200px;margin:0 auto;padding:0 6%;
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
+}
+.intro-text h2{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(26px,3vw,38px);font-weight:800;
+  letter-spacing:-1px;color:var(--text);
+  line-height:1.15;margin-bottom:16px;
+}
+.intro-text p{font-size:15px;color:var(--text-2);line-height:1.8;margin-bottom:16px}
+.intro-card{
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:var(--radius-xl);padding:28px;
+  box-shadow:var(--shadow);
+}
+.intro-card-header{
+  display:flex;align-items:center;gap:12px;margin-bottom:20px;
+  padding-bottom:20px;border-bottom:1px solid var(--border);
+}
+.intro-card-icon{
+  width:44px;height:44px;border-radius:10px;
+  background:var(--orange-light);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;
+}
+.intro-card-title{font-size:15px;font-weight:700;color:var(--text)}
+.intro-card-sub{font-size:12px;color:var(--text-3);margin-top:1px}
+.intro-points{list-style:none;display:flex;flex-direction:column;gap:12px}
+.intro-points li{
+  display:flex;gap:10px;font-size:13px;color:var(--text-2);
+  align-items:flex-start;
+}
+.intro-points li::before{
+  content:'✓';color:var(--green);font-weight:700;
+  flex-shrink:0;margin-top:1px;
+}
+
+/* ── PROBLEM ── */
+#problem{background:var(--bg)}
+.prob-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+}
+.prob-card{
+  background:var(--bg-2);border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:24px;
+  transition:box-shadow 0.2s,border-color 0.2s;
+}
+.prob-card:hover{box-shadow:var(--shadow);border-color:var(--border-2)}
+.prob-icon-wrap{
+  width:44px;height:44px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;margin-bottom:14px;
+}
+.prob-icon-wrap.red{background:var(--red-light)}
+.prob-icon-wrap.amber{background:var(--amber-light)}
+.prob-icon-wrap.blue{background:var(--blue-light)}
+.prob-card h3{
+  font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;
+}
+.prob-card p{font-size:13px;color:var(--text-2);line-height:1.65}
+
+/* ── FLOW ── */
+#flow{background:var(--bg-2)}
+
+/* ── FLOW TOGGLE — improved clickable ── */
+.flow-toggle{
+  display:inline-flex;gap:8px;
+  margin-bottom:16px;
+  flex-wrap:wrap;
+}
+.flow-btn{
+  display:flex;align-items:center;gap:10px;
+  font-size:14px;font-weight:600;
+  padding:12px 24px;cursor:pointer;
+  border-radius:10px;
+  border:2px solid var(--border);
+  background:var(--bg-2);color:var(--text-2);
+  transition:all 0.25s;
+  position:relative;overflow:hidden;
+  box-shadow:0 2px 8px rgba(0,0,0,0.04);
+}
+.flow-btn:hover{
+  border-color:var(--border-2);
+  background:var(--bg-3);
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+.flow-btn-icon{font-size:16px}
+.flow-btn-text{font-size:13px;font-weight:700}
+.flow-btn-hint{
+  font-size:10px;font-weight:500;
+  color:var(--text-3);
+  background:var(--bg-3);
+  padding:2px 8px;border-radius:20px;
+  margin-left:4px;
+}
+.flow-btn.active-before{
+  background:var(--red-light);
+  border-color:#FCA5A5;color:var(--red);
+  box-shadow:0 4px 16px rgba(220,38,38,0.12);
+}
+.flow-btn.active-before .flow-btn-hint{
+  background:rgba(220,38,38,0.1);color:var(--red);
+}
+.flow-btn.active-after{
+  background:var(--green-light);
+  border-color:#6EE7B7;color:var(--green);
+  box-shadow:0 4px 16px rgba(13,171,95,0.12);
+}
+.flow-btn.active-after .flow-btn-hint{
+  background:rgba(13,171,95,0.1);color:var(--green);
+}
+/* Timer bar */
+.flow-timer-wrap{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:32px;
+}
+.flow-timer-bar{
+  flex:1;max-width:280px;height:4px;
+  background:var(--border);border-radius:2px;overflow:hidden;
+  position:relative;
+}
+.flow-timer-bar::after{
+  content:'';
+  position:absolute;top:0;left:0;height:100%;
+  background:var(--orange);border-radius:2px;
+  width:0%;
+  transition:width 0.1s linear;
+}
+.flow-timer-label{
+  font-size:11px;color:var(--text-3);
+  white-space:nowrap;
+}
+.flow-timer-label b{color:var(--orange)}
+.flow-panel{display:none}
+.flow-panel.active{display:flex;flex-direction:column;gap:12px}
+.flow-step-card{
+  display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start;
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:20px 24px;
+  transition:box-shadow 0.2s;
+}
+.flow-step-card:hover{box-shadow:var(--shadow)}
+.flow-step-card.bad{border-left:3px solid var(--red)}
+.flow-step-card.good{border-left:3px solid var(--green)}
+.step-num{
+  width:36px;height:36px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;flex-shrink:0;
+}
+.bad .step-num{background:var(--red-light);color:var(--red)}
+.good .step-num{background:var(--green-light);color:var(--green)}
+.step-body h4{
+  font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;
+}
+.step-body p{font-size:13px;color:var(--text-2);line-height:1.6}
+.step-tag{
+  display:inline-block;margin-top:8px;
+  font-size:11px;font-weight:600;
+  padding:2px 10px;border-radius:20px;
+}
+.bad .step-tag{background:var(--red-light);color:var(--red)}
+.good .step-tag{background:var(--green-light);color:var(--green)}
+
+/* ── MODULES ── */
+/* ── MODULE HINT ── */
+.mod-nav-hint{
+  display:flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:600;color:var(--orange);
+  background:var(--orange-light);border:1px solid var(--orange-border);
+  padding:8px 16px;border-radius:6px;
+  margin-bottom:16px;width:fit-content;
+  animation:pulse 2s ease-in-out infinite;
+}
+.mod-nav-hint-icon{font-size:14px}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.6}}
+
+/* ── MODULE TABS — improved clickable ── */
+#modules{background:var(--bg)}
+.mod-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px}
+.mod-tab{
+  display:flex;flex-direction:column;
+  align-items:flex-start;
+  font-size:13px;font-weight:700;
+  padding:12px 18px;border-radius:10px;cursor:pointer;
+  border:2px solid var(--border);
+  background:var(--bg-2);color:var(--text-2);
+  transition:all 0.25s;
+  position:relative;overflow:hidden;
+  min-width:140px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.04);
+  font-family:'Plus Jakarta Sans',sans-serif;
+}
+.mod-tab:hover{
+  border-color:var(--orange-border);
+  background:var(--orange-light);
+  color:var(--orange);
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(212,88,10,0.12);
+}
+.mod-tab.active{
+  background:var(--orange);
+  color:#fff;
+  border-color:var(--orange);
+  box-shadow:0 6px 20px rgba(212,88,10,0.3);
+  transform:translateY(-2px);
+}
+.mod-tab-num{
+  font-size:10px;font-weight:800;
+  opacity:0.6;margin-bottom:3px;
+  letter-spacing:0.5px;
+}
+.mod-tab.active .mod-tab-num{opacity:0.8;color:#fff}
+.mod-tab-label{font-size:12px;font-weight:700;line-height:1.2}
+/* Progress bar inside each tab */
+.mod-tab-progress{
+  position:absolute;bottom:0;left:0;
+  height:3px;width:0%;
+  background:rgba(255,255,255,0.5);
+  border-radius:0 2px 2px 0;
+  transition:width 0.1s linear;
+}
+.mod-tab:not(.active) .mod-tab-progress{
+  background:var(--orange);
+  opacity:0;
+}
+.mod-tab.active .mod-tab-progress{
+  opacity:1;
+}
+.mod-panel{display:none}
+.mod-panel.active{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start}
+.mod-left .mod-eyebrow{
+  font-size:11px;font-weight:600;letter-spacing:1px;
+  text-transform:uppercase;color:var(--orange);margin-bottom:10px;
+}
+.mod-left h3{
+  font-size:clamp(24px,3vw,34px);font-weight:800;
+  color:var(--text);letter-spacing:-0.8px;line-height:1.1;
+  margin-bottom:14px;
+}
+.mod-left .mod-desc{
+  font-size:14px;color:var(--text-2);line-height:1.8;margin-bottom:24px;
+}
+.mod-features{list-style:none;display:flex;flex-direction:column;gap:8px}
+.mod-features li{
+  display:flex;gap:10px;font-size:13px;color:var(--text-2);
+  line-height:1.55;padding:10px 14px;
+  background:var(--bg-2);border-radius:8px;
+  border:1px solid var(--border);align-items:flex-start;
+}
+.mod-features li span.arrow{color:var(--orange);font-weight:700;flex-shrink:0;margin-top:1px}
+
+/* ── WIREFRAMES ── */
+.wf-container{
+  background:var(--bg-2);border:1px solid var(--border);
+  border-radius:var(--radius-xl);overflow:hidden;
+  box-shadow:var(--shadow-lg);
+}
+.wf-topbar{
+  background:var(--bg);border-bottom:1px solid var(--border);
+  padding:10px 16px;display:flex;align-items:center;gap:8px;
+}
+.wf-dot{width:10px;height:10px;border-radius:50%}
+.wf-dot.r{background:#FF5F57}
+.wf-dot.y{background:#FFBD2E}
+.wf-dot.g{background:#28C941}
+.wf-app-title{
+  font-size:12px;font-weight:600;color:var(--text-2);
+  margin-left:8px;
+}
+.wf-body{padding:18px}
+
+/* Schedule WF */
+.wf-sched-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:14px;
+}
+.wf-sched-title{font-size:15px;font-weight:700;color:var(--text)}
+.wf-sched-actions{display:flex;gap:8px}
+.wf-btn-primary{
+  font-size:11px;font-weight:600;padding:5px 14px;
+  background:var(--orange);color:#fff;border-radius:5px;
+}
+.wf-btn-outline{
+  font-size:11px;font-weight:600;padding:5px 14px;
+  background:transparent;color:var(--text-2);
+  border:1px solid var(--border);border-radius:5px;
+}
+.wf-days{display:grid;grid-template-columns:56px repeat(7,1fr);gap:0;margin-bottom:2px}
+.wf-day{
+  text-align:center;padding:6px 4px;
+  font-size:10px;font-weight:600;color:var(--text-3);
+}
+.wf-day.today{color:var(--orange)}
+.wf-sched-row{display:grid;grid-template-columns:56px repeat(7,1fr);gap:0;margin-bottom:2px}
+.wf-row-label{
+  font-size:10px;font-weight:600;color:var(--text-3);
+  padding:6px 4px;display:flex;align-items:center;
+}
+.wf-cell{height:42px;border:1px solid var(--border);margin-right:-1px;background:var(--bg);position:relative}
+.wf-booking{
+  position:absolute;inset:2px;border-radius:4px;
+  padding:3px 6px;font-size:9px;font-weight:600;overflow:hidden;
+}
+.bk-green{background:rgba(13,171,95,0.1);color:var(--green);border-left:2px solid var(--green)}
+.bk-orange{background:var(--orange-light);color:var(--orange);border-left:2px solid var(--orange)}
+.bk-amber{background:var(--amber-light);color:var(--amber);border-left:2px solid var(--amber)}
+.bk-blue{background:var(--blue-light);color:var(--blue);border-left:2px solid var(--blue)}
+.bk-unavail{background:var(--bg-3);color:var(--text-3);font-size:9px;display:flex;align-items:center;justify-content:center}
+.wf-legend{display:flex;gap:14px;margin-top:10px;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text-3);font-weight:500}
+.legend-dot{width:8px;height:8px;border-radius:2px}
+
+/* IBD WF */
+.ibd-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.ibd-sum-card{
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:8px;padding:10px 12px;text-align:center;
+}
+.ibd-sum-num{font-size:20px;font-weight:800;line-height:1;display:block}
+.ibd-sum-label{font-size:9px;font-weight:500;color:var(--text-3);margin-top:3px}
+.ibd-sum-card.orange .ibd-sum-num{color:var(--orange)}
+.ibd-sum-card.amber .ibd-sum-num{color:var(--amber)}
+.ibd-sum-card.red .ibd-sum-num{color:var(--red)}
+.ibd-sum-card.green .ibd-sum-num{color:var(--green)}
+.ibd-table{width:100%;border-collapse:collapse}
+.ibd-table th{
+  font-size:10px;font-weight:600;color:var(--text-3);
+  padding:6px 8px;border-bottom:1px solid var(--border);
+  text-align:left;
+}
+.ibd-table td{
+  font-size:11px;color:var(--text-2);
+  padding:8px 8px;border-bottom:1px solid var(--border);
+  vertical-align:middle;
+}
+.ibd-table td:first-child{font-weight:600;color:var(--text)}
+.ibd-table tr:last-child td{border-bottom:none}
+.status-pill{
+  font-size:10px;font-weight:600;
+  padding:3px 8px;border-radius:20px;white-space:nowrap;
+}
+.sp-transit{background:var(--amber-light);color:var(--amber)}
+.sp-pending{background:var(--red-light);color:var(--red)}
+.sp-done{background:var(--green-light);color:var(--green)}
+.sp-pgr-btn{
+  font-size:10px;font-weight:600;padding:4px 10px;
+  background:var(--orange);color:#fff;border-radius:5px;
+  cursor:pointer;white-space:nowrap;
+}
+
+/* Stock WF */
+.stock-header-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.stock-toggle{display:flex;gap:0;border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.stock-toggle-btn{
+  font-size:10px;font-weight:600;padding:4px 12px;
+  background:transparent;color:var(--text-3);cursor:pointer;border:none;
+}
+.stock-toggle-btn.active{background:var(--orange);color:#fff}
+.stock-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.stock-kpi{
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:8px;padding:12px;
+}
+.stock-kpi-label{font-size:10px;font-weight:500;color:var(--text-3);margin-bottom:4px}
+.stock-kpi-val{font-size:18px;font-weight:800;line-height:1;color:var(--text)}
+.stock-kpi-unit{font-size:10px;color:var(--text-3);font-weight:400}
+.stock-kpi-bar{height:4px;background:var(--border);border-radius:2px;margin-top:8px;overflow:hidden}
+.stock-kpi-fill{height:100%;border-radius:2px}
+.fill-green{background:var(--green)}
+.fill-amber{background:var(--amber)}
+.fill-red{background:var(--red)}
+.stock-tbl{width:100%;border-collapse:collapse}
+.stock-tbl th{font-size:10px;font-weight:600;color:var(--text-3);padding:5px 8px;border-bottom:1px solid var(--border);text-align:left}
+.stock-tbl td{font-size:11px;color:var(--text-2);padding:6px 8px;border-bottom:1px solid var(--border)}
+.stock-tbl td:first-child{font-weight:600;color:var(--text)}
+.stock-tbl tr:last-child td{border-bottom:none}
+.qty-up{color:var(--green);font-weight:700}
+.qty-warn{color:var(--amber);font-weight:700}
+.qty-low{color:var(--red);font-weight:700}
+
+/* Mobile WF */
+.mob-device{
+  width:200px;margin:0 auto;
+  background:var(--dark);border-radius:28px;
+  padding:12px;box-shadow:0 20px 60px rgba(0,0,0,0.2);
+}
+.mob-notch{
+  width:70px;height:24px;background:var(--dark-2);
+  border-radius:12px;margin:0 auto 10px;
+  display:flex;align-items:center;justify-content:center;
+  gap:6px;
+}
+.mob-notch-cam{width:8px;height:8px;border-radius:50%;background:#333}
+.mob-screen{background:#fff;border-radius:20px;overflow:hidden}
+.mob-status{
+  background:var(--orange);padding:8px 14px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.mob-status-title{font-size:11px;font-weight:700;color:#fff}
+.mob-status-icon{font-size:11px;color:rgba(255,255,255,0.8)}
+.mob-offline-bar{
+  background:var(--amber-light);border-bottom:1px solid var(--orange-mid);
+  padding:4px 12px;
+  font-size:9px;font-weight:600;color:var(--amber);text-align:center;
+}
+.mob-content{padding:10px 12px}
+.mob-section-label{
+  font-size:9px;font-weight:600;color:var(--text-3);
+  text-transform:uppercase;letter-spacing:0.8px;
+  margin-bottom:6px;margin-top:10px;
+}
+.mob-section-label:first-child{margin-top:0}
+.mob-field-row{
+  background:var(--bg-2);border:1px solid var(--border);
+  border-radius:6px;padding:6px 10px;margin-bottom:4px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.mob-field-key{font-size:9px;color:var(--text-3);font-weight:500}
+.mob-field-val{font-size:10px;font-weight:700;color:var(--text)}
+.mob-input-row{
+  background:#fff;border:1.5px solid var(--orange);
+  border-radius:6px;padding:6px 10px;margin-bottom:4px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.mob-input-key{font-size:9px;color:var(--orange);font-weight:600}
+.mob-input-val{font-size:11px;font-weight:800;color:var(--text)}
+.mob-submit-btn{
+  background:var(--orange);color:#fff;
+  border-radius:8px;padding:8px;
+  text-align:center;font-size:11px;font-weight:700;
+  margin-top:8px;
+}
+.mob-docket-section{
+  background:var(--green-light);border:1px solid rgba(13,171,95,0.2);
+  border-radius:6px;padding:8px 10px;margin-top:6px;
+}
+.mob-docket-title{font-size:9px;font-weight:700;color:var(--green);margin-bottom:4px}
+.mob-sign-area{
+  background:#fff;border:1px dashed rgba(13,171,95,0.4);
+  border-radius:4px;height:28px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:9px;color:var(--text-3);
+}
+
+/* Portal WF */
+.portal-topbar{
+  background:var(--text);padding:10px 14px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.portal-brand{font-size:12px;font-weight:700;color:#fff}
+.portal-brand span{color:var(--orange)}
+.portal-user-info{font-size:10px;color:rgba(255,255,255,0.6);display:flex;align-items:center;gap:6px}
+.portal-avatar{width:22px;height:22px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;font-weight:700}
+.portal-kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.portal-kpi{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center}
+.portal-kpi-num{font-size:22px;font-weight:800;color:var(--orange);line-height:1;display:block}
+.portal-kpi-label{font-size:9px;color:var(--text-3);font-weight:500;margin-top:2px}
+.portal-section-title{font-size:11px;font-weight:700;color:var(--text);margin-bottom:8px}
+.portal-delivery-card{
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:8px;padding:12px;margin-bottom:8px;
+}
+.portal-del-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.portal-del-id{font-size:11px;font-weight:700;color:var(--text)}
+.portal-del-meta{font-size:10px;color:var(--text-3);display:flex;gap:12px;margin-bottom:8px}
+.portal-del-actions{display:flex;gap:6px}
+.portal-action-btn{
+  font-size:10px;font-weight:600;padding:4px 12px;
+  border-radius:5px;cursor:pointer;
+}
+.pab-outline{background:transparent;color:var(--text-2);border:1px solid var(--border)}
+.pab-primary{background:var(--green);color:#fff}
+.pab-orange{background:var(--orange);color:#fff}
+.portal-delivery-card.highlight{border-color:rgba(13,171,95,0.3);background:var(--green-light)}
+
+/* Forecast WF */
+.forecast-tabs{display:flex;gap:0;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:14px;background:var(--bg)}
+.fc-tab{font-size:10px;font-weight:600;padding:5px 12px;background:transparent;color:var(--text-3);cursor:pointer;border:none}
+.fc-tab.active{background:var(--orange);color:#fff}
+.fc-chart-area{height:90px;display:flex;align-items:flex-end;gap:3px;margin-bottom:12px;padding:0 2px}
+.fc-bar-group{flex:1;display:flex;align-items:flex-end;gap:1px}
+.fc-bar{flex:1;border-radius:3px 3px 0 0;min-height:4px}
+.fc-actual{background:var(--orange);opacity:0.8}
+.fc-planned{background:var(--blue);opacity:0.6}
+.fc-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px}
+.fc-bar-label{font-size:8px;color:var(--text-3);font-weight:500}
+.fc-legend{display:flex;gap:14px;margin-bottom:12px}
+.fc-leg-item{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text-2);font-weight:500}
+.fc-leg-dot{width:10px;height:6px;border-radius:2px}
+.fc-leg-orange{background:var(--orange);opacity:0.8}
+.fc-leg-blue{background:var(--blue);opacity:0.6}
+.fc-table{width:100%;border-collapse:collapse}
+.fc-table th{font-size:9px;font-weight:600;color:var(--text-3);padding:5px 8px;border-bottom:1px solid var(--border);text-align:left}
+.fc-table td{font-size:10px;color:var(--text-2);padding:5px 8px;border-bottom:1px solid var(--border)}
+.fc-table td:first-child{font-weight:600;color:var(--text)}
+.fc-table tr:last-child td{border-bottom:none}
+.fc-val-orange{color:var(--orange);font-weight:700}
+.fc-val-green{color:var(--green);font-weight:700}
+.fc-val-blue{color:var(--blue);font-weight:700}
+
+/* ── PROOF ── */
+#proof{background:var(--bg-2)}
+.proof-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  margin-top:48px;
+}
+.proof-card{
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:28px;
+}
+.proof-num{
+  font-size:42px;font-weight:800;color:var(--orange);
+  line-height:1;letter-spacing:-1px;display:block;margin-bottom:8px;
+}
+.proof-card h4{font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px}
+.proof-card p{font-size:13px;color:var(--text-2);line-height:1.65}
+.proof-statement{
+  margin-top:48px;background:var(--bg);
+  border:1px solid var(--border);border-radius:var(--radius-xl);
+  padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+}
+.proof-statement-text{
+  font-family:'Instrument Serif',serif;
+  font-size:20px;color:var(--text);line-height:1.65;font-style:italic;
+}
+.proof-statement-meta{display:flex;flex-direction:column;gap:16px}
+.proof-meta-item{
+  display:flex;gap:12px;align-items:flex-start;
+  padding:14px;background:var(--bg-2);border-radius:10px;
+}
+.proof-meta-icon{font-size:18px;flex-shrink:0}
+.proof-meta-text h5{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px}
+.proof-meta-text p{font-size:12px;color:var(--text-2);line-height:1.5}
+
+/* ── OFFER ── */
+#offer{background:var(--bg)}
+.offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.offer-card{
+  background:var(--bg-2);border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:28px;
+  transition:box-shadow 0.2s,border-color 0.2s;
+}
+.offer-card:hover{box-shadow:var(--shadow-lg);border-color:var(--orange-border)}
+.offer-step{
+  width:36px;height:36px;border-radius:8px;
+  background:var(--orange-light);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:800;color:var(--orange);
+  margin-bottom:16px;
+}
+.offer-card h3{font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px}
+.offer-card p{font-size:13px;color:var(--text-2);line-height:1.7}
+
+/* ── CTA ── */
+#cta{
+  background:var(--text);padding:80px 0;
+}
+.cta-inner{
+  max-width:1200px;margin:0 auto;padding:0 6%;
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
+}
+.cta-text h2{
+  font-size:clamp(32px,4vw,48px);font-weight:800;
+  letter-spacing:-1.5px;color:#fff;
+  line-height:1.1;margin-bottom:16px;
+}
+.cta-text p{font-size:15px;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:28px}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:700;
+  padding:14px 32px;border-radius:8px;
+  background:var(--orange);color:#fff;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:background 0.2s,transform 0.15s;
+}
+.cta-btn:hover{background:var(--orange-2);transform:translateY(-2px)}
+.cta-contact-alt{font-size:13px;color:rgba(255,255,255,0.4);margin-top:14px}
+.cta-contact-alt a{color:rgba(255,255,255,0.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2)}
+.cta-right{display:flex;flex-direction:column;gap:12px}
+.cta-feature{
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+  border-radius:10px;padding:16px 20px;
+  display:flex;gap:14px;align-items:flex-start;
+}
+.cta-feature-icon{font-size:20px;flex-shrink:0}
+.cta-feature h5{font-size:13px;font-weight:700;color:#fff;margin-bottom:3px}
+.cta-feature p{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.5}
+
+/* ── ANIMATIONS ── */
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:0.1s}
+.delay-2{transition-delay:0.2s}
+.delay-3{transition-delay:0.3s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .prob-grid,.proof-grid,.offer-grid,.mod-panel.active{grid-template-columns:1fr 1fr}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .h-stat:nth-child(2){border-right:none}
+  .h-stat:nth-child(3){border-top:1px solid var(--border)}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .prob-grid,.proof-grid,.offer-grid,.mod-panel.active,.intro-inner,.cta-inner,.proof-statement{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="nav-logo-icon">⚡</div>
+      <div class="nav-logo-text">Field Ops Intelligence</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#intro">Overview</a></li>
+      <li><a href="#flow">The Transformation</a></li>
+      <li><a href="#modules">Solution Modules</a></li>
+      <li><a href="#proof">Our Experience</a></li>
+      <li><a href="#offer">Our Approach</a></li>
+    </ul>
+    <a href="#cta" class="nav-cta">Request a Demo</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <div class="dot"></div>
+      Built for Mining & Explosives Industry
+    </div>
+    <h1>
+      End-to-End<br>
+      <em>Field Operations</em><br>
+      <span class="soft">Digitalization</span>
+    </h1>
+    <p class="hero-desc">A purpose-built digital platform that connects blast scheduling, supply chain, inventory management, field execution and customer billing — into one integrated, real-time system.</p>
+    <div class="hero-stats">
+      <div class="h-stat"><span class="n">6</span><span class="l">Core Modules</span></div>
+      <div class="h-stat"><span class="n">4</span><span class="l">Regions Deployed</span></div>
+      <div class="h-stat"><span class="n">ERP</span><span class="l">Integrated</span></div>
+      <div class="h-stat"><span class="n">Offline</span><span class="l">Capable</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section id="intro" style="padding:60px 0">
+  <div class="intro-inner">
+    <div class="intro-text">
+      <div class="eyebrow">Our Experience</div>
+      <h2>We have architected and delivered this solution — at global scale.</h2>
+      <p>Our team designed and delivered a comprehensive field operations platform for one of the world's leading explosives companies, deployed live across operations in Australia, North America, EMEA and Asia.</p>
+      <p>This document shares the solution framework, the platform capabilities and how we can bring the same thinking to your organisation — tailored to your specific business processes and operations.</p>
+    </div>
+    <div class="intro-card">
+      <div class="intro-card-header">
+        <div class="intro-card-icon">🌏</div>
+        <div>
+          <div class="intro-card-title">Global Delivery Reference</div>
+          <div class="intro-card-sub">Leading explosives company — Australia & international operations</div>
+        </div>
+      </div>
+      <ul class="intro-points">
+        <li>Blast scheduling and field supply execution across 4 global regions</li>
+        <li>Mobile app for MMU operators — works fully offline at remote mine sites</li>
+        <li>Inbound delivery automation with one-click ERP goods receipt posting</li>
+        <li>Real-time inventory management — from depot to blast hole</li>
+        <li>Customer portal with digital delivery dockets and invoice tracking</li>
+        <li>6-month rolling forecast integrated directly with ERP planned orders</li>
+        <li>Multi-language support — 7 languages, global rollout in weeks</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="container">
+    <div class="eyebrow reveal">Operational Challenges</div>
+    <h2 style="font-size:clamp(28px,3.5vw,42px);font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:12px" class="reveal">Key challenges in explosives<br>field operations today</h2>
+    <p style="font-size:15px;color:var(--text-2);max-width:560px;line-height:1.75;margin-bottom:48px" class="reveal">Field operations in the explosives and mining industry involve complex, time-sensitive coordination across multiple teams, vehicles and locations — often in remote areas with limited connectivity.</p>
+    <div class="prob-grid reveal">
+      <div class="prob-card">
+        <div class="prob-icon-wrap red">📋</div>
+        <h3>Scheduling Complexity</h3>
+        <p>Managing MMU vehicles, crew, shotfirers and surveyors across multiple blast sites — single-day, multi-day and recurring jobs — requires real-time coordination that manual systems struggle to support reliably.</p>
+      </div>
+      <div class="prob-card">
+        <div class="prob-icon-wrap amber">📦</div>
+        <h3>Inventory Visibility Gap</h3>
+        <p>Knowing the real-time stock position of materials like AN, ANE and detonators — across depot, in-transit MMUs and consumed at the blast hole — is operationally critical but difficult without a connected system.</p>
+      </div>
+      <div class="prob-card">
+        <div class="prob-icon-wrap red">📄</div>
+        <h3>Delivery Documentation</h3>
+        <p>Capturing actual quantities delivered at the blast hole, getting customer sign-off and translating that into ERP transactions and customer invoices is a multi-step process that benefits enormously from digitalization.</p>
+      </div>
+      <div class="prob-card">
+        <div class="prob-icon-wrap blue">🔌</div>
+        <h3>Remote Connectivity</h3>
+        <p>Mine sites and quarries are often in areas with limited or no cellular connectivity. Any field solution must be designed to work offline and sync automatically when connectivity is restored.</p>
+      </div>
+      <div class="prob-card">
+        <div class="prob-icon-wrap amber">🔗</div>
+        <h3>ERP Integration</h3>
+        <p>Field operations data — deliveries, stock movements, goods receipts — needs to flow accurately and in real time into core ERP systems for inventory accuracy, compliance and invoice generation.</p>
+      </div>
+      <div class="prob-card">
+        <div class="prob-icon-wrap blue">👤</div>
+        <h3>Customer Transparency</h3>
+        <p>Mining customers benefit from real-time visibility of scheduled deliveries, confirmed quantities and signed delivery dockets — enabling faster invoice approval and stronger operational partnerships.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section id="flow">
+  <div class="container">
+    <div class="eyebrow reveal">The Transformation</div>
+    <h2 style="font-size:clamp(28px,3.5vw,42px);font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:12px" class="reveal">How operations change<br>with digitalization</h2>
+    <p style="font-size:15px;color:var(--text-2);max-width:560px;line-height:1.75;margin-bottom:40px" class="reveal">A step-by-step view of how each stage of field operations is transformed — from planning through to billing.</p>
+    <div class="reveal">
+      <div class="flow-toggle">
+        <button class="flow-btn active-before" id="btn-before" onclick="showFlow('before');resetFlowTimer()">
+          <span class="flow-btn-icon">⚠</span>
+          <span class="flow-btn-text">The Manual Approach</span>
+          <span class="flow-btn-hint">click to view</span>
+        </button>
+        <button class="flow-btn" id="btn-after" onclick="showFlow('after');resetFlowTimer()">
+          <span class="flow-btn-icon">✓</span>
+          <span class="flow-btn-text">With Digital Platform</span>
+          <span class="flow-btn-hint">click to view</span>
+        </button>
+      </div>
+      <!-- Timer bar -->
+      <div class="flow-timer-wrap">
+        <div class="flow-timer-bar" id="flow-timer-bar"></div>
+        <span class="flow-timer-label" id="flow-timer-label">Auto-switching in <b id="flow-countdown">6</b>s</span>
+      </div>
+
+      <div class="flow-panel active" id="panel-before">
+        <div class="flow-step-card bad">
+          <div class="step-num">01</div>
+          <div class="step-body"><h4>Manual Scheduling</h4><p>Blast schedules, vehicle assignments and crew rosters are managed on whiteboards, spreadsheets or via informal communication. Any change requires manual re-coordination across multiple teams.</p><span class="step-tag">Coordination overhead</span></div>
+        </div>
+        <div class="flow-step-card bad">
+          <div class="step-num">02</div>
+          <div class="step-body"><h4>Informal Communication</h4><p>Schedule updates are shared via phone, email or messaging apps to drivers and field crew. Version control is a challenge — field teams may work from outdated information.</p><span class="step-tag">Risk of miscommunication</span></div>
+        </div>
+        <div class="flow-step-card bad">
+          <div class="step-num">03</div>
+          <div class="step-body"><h4>MMU Departs Without Digital Record</h4><p>The truck leaves with printed or verbal instructions. There is no live connection between the field vehicle and the depot or ERP system during operations.</p><span class="step-tag">No real-time visibility</span></div>
+        </div>
+        <div class="flow-step-card bad">
+          <div class="step-num">04</div>
+          <div class="step-body"><h4>Paper Delivery Docket at Site</h4><p>The operator records actual quantities on a paper docket at the blast hole. The customer signs a physical copy. This paper document is then transported back to the depot.</p><span class="step-tag">Data capture delay</span></div>
+        </div>
+        <div class="flow-step-card bad">
+          <div class="step-num">05</div>
+          <div class="step-body"><h4>Manual ERP Entry</h4><p>Office staff manually enters docket data into the ERP system — often the next day. This creates a lag in inventory updates, stock reconciliation and billing initiation.</p><span class="step-tag">24–48 hour delay</span></div>
+        </div>
+        <div class="flow-step-card bad">
+          <div class="step-num">06</div>
+          <div class="step-body"><h4>Delayed Invoice Processing</h4><p>Invoice is raised days after delivery. Quantity discrepancies between planned and actual require manual resolution. Customer payment cycle starts later than necessary.</p><span class="step-tag">Cash flow impact</span></div>
+        </div>
+      </div>
+
+      <div class="flow-panel" id="panel-after">
+        <div class="flow-step-card good">
+          <div class="step-num">01</div>
+          <div class="step-body"><h4>Digital Scheduling Board</h4><p>Planner creates blast bookings — single day, multi-day or recurring — on a week-view scheduling board. Vehicle availability, crew assignment, products and blast IDs are all captured digitally with a full audit trail.</p><span class="step-tag">Complete traceability</span></div>
+        </div>
+        <div class="flow-step-card good">
+          <div class="step-num">02</div>
+          <div class="step-body"><h4>Automated Notifications</h4><p>Field operators receive job details on their mobile app. Customers receive an automated SMS or email confirming the scheduled delivery — the day before. No manual communication required.</p><span class="step-tag">Zero manual comms</span></div>
+        </div>
+        <div class="flow-step-card good">
+          <div class="step-num">03</div>
+          <div class="step-body"><h4>Mobile App — Offline Ready</h4><p>The MMU operator works from the mobile app at the blast site. The app functions fully offline in areas with no connectivity. All data is securely stored on the device and synced when connected.</p><span class="step-tag">Works in remote areas</span></div>
+        </div>
+        <div class="flow-step-card good">
+          <div class="step-num">04</div>
+          <div class="step-body"><h4>Digital Delivery Docket</h4><p>The operator enters actual quantities pumped at the blast hole. The customer signs digitally on the device. The delivery docket is immediately locked, stored and linked to the job record.</p><span class="step-tag">Instant, tamper-proof record</span></div>
+        </div>
+        <div class="flow-step-card good">
+          <div class="step-num">05</div>
+          <div class="step-body"><h4>Automatic ERP Update</h4><p>On network reconnection, the app syncs to the core ERP system. Goods receipt is posted automatically. Inventory is updated in real time. No manual data entry required at any stage.</p><span class="step-tag">Real-time accuracy</span></div>
+        </div>
+        <div class="flow-step-card good">
+          <div class="step-num">06</div>
+          <div class="step-body"><h4>Same-Day Invoice Generation</h4><p>Invoice is generated automatically from the signed digital docket. The customer views and approves it through the customer portal. The billing cycle begins the same day as delivery.</p><span class="step-tag">Accelerated cash flow</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section id="modules">
+  <div class="container">
+    <div class="eyebrow reveal">Solution Modules</div>
+    <h2 style="font-size:clamp(28px,3.5vw,42px);font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:12px" class="reveal">Six modules. One connected platform.</h2>
+    <p style="font-size:15px;color:var(--text-2);max-width:560px;line-height:1.75;margin-bottom:48px" class="reveal">Each module addresses a specific operational challenge. They can be implemented individually or as a fully integrated suite — tailored to your organisation's specific processes and systems.</p>
+
+    <div class="mod-nav-hint reveal">
+      <span class="mod-nav-hint-icon">👇</span>
+      <span>Explore each module — click or wait for auto-tour</span>
+    </div>
+    <div class="mod-nav reveal" id="mod-nav">
+      <button class="mod-tab active" id="mod-tab-scheduling" onclick="showMod('scheduling',this);resetModTimer()">
+        <span class="mod-tab-num">01</span>
+        <span class="mod-tab-label">Blast Scheduling</span>
+        <span class="mod-tab-progress" id="mod-progress-scheduling"></span>
+      </button>
+      <button class="mod-tab" id="mod-tab-ibd" onclick="showMod('ibd',this);resetModTimer()">
+        <span class="mod-tab-num">02</span>
+        <span class="mod-tab-label">Supply Chain &amp; IBD</span>
+        <span class="mod-tab-progress" id="mod-progress-ibd"></span>
+      </button>
+      <button class="mod-tab" id="mod-tab-stock" onclick="showMod('stock',this);resetModTimer()">
+        <span class="mod-tab-num">03</span>
+        <span class="mod-tab-label">Stock Management</span>
+        <span class="mod-tab-progress" id="mod-progress-stock"></span>
+      </button>
+      <button class="mod-tab" id="mod-tab-mobile" onclick="showMod('mobile',this);resetModTimer()">
+        <span class="mod-tab-num">04</span>
+        <span class="mod-tab-label">Mobile App</span>
+        <span class="mod-tab-progress" id="mod-progress-mobile"></span>
+      </button>
+      <button class="mod-tab" id="mod-tab-portal" onclick="showMod('portal',this);resetModTimer()">
+        <span class="mod-tab-num">05</span>
+        <span class="mod-tab-label">Customer Portal</span>
+        <span class="mod-tab-progress" id="mod-progress-portal"></span>
+      </button>
+      <button class="mod-tab" id="mod-tab-forecast" onclick="showMod('forecast',this);resetModTimer()">
+        <span class="mod-tab-num">06</span>
+        <span class="mod-tab-label">AI Forecasting</span>
+        <span class="mod-tab-progress" id="mod-progress-forecast"></span>
+      </button>
+    </div>
+
+    <!-- 01 SCHEDULING -->
+    <div class="mod-panel active" id="mod-scheduling">
+      <div class="mod-left">
+        <div class="mod-eyebrow">Module 01</div>
+        <h3>Blast Scheduling &amp; Field Operations</h3>
+        <p class="mod-desc">A visual, week-view scheduling board where planners manage all field operations — assigning vehicles, crew and resources to blast jobs with full support for recurring and multi-day scenarios.</p>
+        <ul class="mod-features">
+          <li><span class="arrow">→</span>Single-day, multi-day and recurring booking types for all field operation scenarios including travelling time to remote sites</li>
+          <li><span class="arrow">→</span>Real-time vehicle and crew availability — green, amber and red indicators per resource per day with double-booking alerts</li>
+          <li><span class="arrow">→</span>Blast ID and Shot Number generation linked to customer PO and contract — complete billing traceability from planning to invoice</li>
+          <li><span class="arrow">→</span>Products, raw materials and services assigned at planning stage — bulk materials, detonators, initiating systems</li>
+          <li><span class="arrow">→</span>Multi-plant management — planners managing multiple sites see a consolidated view with easy plant switching</li>
+          <li><span class="arrow">→</span>Complete audit trail — every schedule change is timestamped with user, reason and before/after values</li>
+        </ul>
+      </div>
+      <div class="wf-container">
+        <div class="wf-topbar"><div class="wf-dot r"></div><div class="wf-dot y"></div><div class="wf-dot g"></div><div class="wf-app-title">Scheduling Board — Plant 1054</div></div>
+        <div class="wf-body">
+          <div class="wf-sched-header">
+            <div class="wf-sched-title">Week Schedule</div>
+            <div class="wf-sched-actions"><div class="wf-btn-outline">← This Week →</div><div class="wf-btn-primary">+ New Booking</div></div>
+          </div>
+          <div class="wf-days">
+            <div></div>
+            <div class="wf-day">MON 06</div><div class="wf-day today">TUE 07 ●</div>
+            <div class="wf-day">WED 08</div><div class="wf-day">THU 09</div>
+            <div class="wf-day">FRI 10</div><div class="wf-day">SAT 11</div><div class="wf-day">SUN 12</div>
+          </div>
+          <div style="font-size:10px;font-weight:600;color:var(--text-3);padding:4px;margin-bottom:2px">MMU VEHICLES</div>
+          <div class="wf-sched-row">
+            <div class="wf-row-label">MMU-01</div>
+            <div class="wf-cell"><div class="wf-booking bk-green">Goldmine AN 18t</div></div>
+            <div class="wf-cell"><div class="wf-booking bk-orange">Ironridge 22t</div></div>
+            <div class="wf-cell"><div class="wf-booking bk-orange">Ironridge Day 2</div></div>
+            <div class="wf-cell"></div>
+            <div class="wf-cell"><div class="wf-booking bk-amber">Limestone Planned</div></div>
+            <div class="wf-cell"><div class="wf-booking bk-unavail">Unavailable</div></div>
+            <div class="wf-cell"><div class="wf-booking bk-unavail">Unavailable</div></div>
+          </div>
+          <div class="wf-sched-row">
+            <div class="wf-row-label">MMU-02</div>
+            <div class="wf-cell"><div class="wf-booking bk-amber">Quarry-B ANE 12t</div></div>
+            <div class="wf-cell"></div>
+            <div class="wf-cell"><div class="wf-booking bk-green">Coalfield AN 30t</div></div>
+            <div class="wf-cell"><div class="wf-booking bk-green">Coalfield Day 2</div></div>
+            <div class="wf-cell"></div>
+            <div class="wf-cell"></div>
+            <div class="wf-cell"><div class="wf-booking bk-unavail">Unavailable</div></div>
+          </div>
+          <div style="font-size:10px;font-weight:600;color:var(--text-3);padding:4px;margin:4px 0 2px">SHOTFIRER / SURVEYOR</div>
+          <div class="wf-sched-row">
+            <div class="wf-row-label">SFV-01</div>
+            <div class="wf-cell"></div>
+            <div class="wf-cell"><div class="wf-booking bk-green">Shotfiring Goldmine</div></div>
+            <div class="wf-cell"></div>
+            <div class="wf-cell"><div class="wf-booking bk-amber">Planned</div></div>
+            <div class="wf-cell"></div>
+            <div class="wf-cell"></div>
+            <div class="wf-cell"></div>
+          </div>
+          <div class="wf-sched-row">
+            <div class="wf-row-label">Survey</div>
+            <div class="wf-cell"><div class="wf-booking bk-blue">Mark Out</div></div>
+            <div class="wf-cell"></div>
+            <div class="wf-cell"><div class="wf-booking bk-blue">Bore Track</div></div>
+            <div class="wf-cell"><div class="wf-booking bk-blue">Mark Out</div></div>
+            <div class="wf-cell"></div>
+            <div class="wf-cell"></div>
+            <div class="wf-cell"></div>
+          </div>
+          <div class="wf-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>Delivered</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--orange)"></div>In Progress</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--amber)"></div>Planned</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div>Operations</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--bg-3)"></div>Unavailable</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 IBD -->
+    <div class="mod-panel" id="mod-ibd">
+      <div class="mod-left">
+        <div class="mod-eyebrow">Module 02</div>
+        <h3>Supply Chain &amp; Inbound Delivery</h3>
+        <p class="mod-desc">A real-time dashboard showing all inbound material deliveries to a plant — by status, material and date. Field teams confirm receipt through the platform which automatically posts the transaction in the ERP system.</p>
+        <ul class="mod-features">
+          <li><span class="arrow">→</span>Live inbound delivery dashboard — filtered by All, In Transit, Receipt Pending and Completed — updated in real time</li>
+          <li><span class="arrow">→</span>One-click goods receipt — validates delivered versus expected quantities and flags variances before posting</li>
+          <li><span class="arrow">→</span>Partial receipt handling — when quantities do not match, system flags for resolution and notifies supply chain</li>
+          <li><span class="arrow">→</span>Instant ERP inventory update — no end-of-day processing, no manual data entry at any stage</li>
+          <li><span class="arrow">→</span>Material-level detail view — batch codes, delivered quantity, received quantity, variance and comments per line item</li>
+          <li><span class="arrow">→</span>Daily stock summary on homepage updated automatically as each delivery is confirmed</li>
+        </ul>
+      </div>
+      <div class="wf-container">
+        <div class="wf-topbar"><div class="wf-dot r"></div><div class="wf-dot y"></div><div class="wf-dot g"></div><div class="wf-app-title">Inbound Delivery Dashboard — Plant 1054</div></div>
+        <div class="wf-body">
+          <div class="ibd-summary">
+            <div class="ibd-sum-card orange"><span class="ibd-sum-num">15</span><div class="ibd-sum-label">Total Today</div></div>
+            <div class="ibd-sum-card amber"><span class="ibd-sum-num">08</span><div class="ibd-sum-label">In Transit</div></div>
+            <div class="ibd-sum-card red"><span class="ibd-sum-num">03</span><div class="ibd-sum-label">GR Pending</div></div>
+            <div class="ibd-sum-card green"><span class="ibd-sum-num">04</span><div class="ibd-sum-label">Completed</div></div>
+          </div>
+          <table class="ibd-table">
+            <thead><tr><th>IBD No.</th><th>Supplier</th><th>Material</th><th>Qty</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>IBD-1001</td>
+                <td>AN Depot Nagpur</td>
+                <td>Ammonium Nitrate</td>
+                <td>50 t</td>
+                <td><span class="status-pill sp-transit">In Transit</span></td>
+                <td><span class="sp-pgr-btn">View</span></td>
+              </tr>
+              <tr>
+                <td>IBD-1002</td>
+                <td>ANE Plant Pune</td>
+                <td>AN Emulsion</td>
+                <td>30 t</td>
+                <td><span class="status-pill sp-pending">GR Pending</span></td>
+                <td><span class="sp-pgr-btn">Post GR</span></td>
+              </tr>
+              <tr>
+                <td>IBD-1003</td>
+                <td>Detonator Plant</td>
+                <td>EXEL Detonators</td>
+                <td>200 pcs</td>
+                <td><span class="status-pill sp-done">Completed ✓</span></td>
+                <td><span class="sp-pgr-btn" style="background:var(--bg-2);color:var(--text-2);border:1px solid var(--border)">View</span></td>
+              </tr>
+              <tr>
+                <td>IBD-1004</td>
+                <td>AN Depot Nagpur</td>
+                <td>Ammonium Nitrate</td>
+                <td>60 t</td>
+                <td><span class="status-pill sp-transit">In Transit</span></td>
+                <td><span class="sp-pgr-btn">View</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 STOCK -->
+    <div class="mod-panel" id="mod-stock">
+      <div class="mod-left">
+        <div class="mod-eyebrow">Module 03</div>
+        <h3>Explosives Stock Management</h3>
+        <p class="mod-desc">A real-time inventory dashboard showing the complete stock position per material per plant — opening balance, inbound deliveries, field consumption and closing stock — updated automatically throughout the day.</p>
+        <ul class="mod-features">
+          <li><span class="arrow">→</span>Daily stock summary — opening balance, deliveries received, GR pending, field consumption, planned orders and closing stock</li>
+          <li><span class="arrow">→</span>Yesterday, Today and Tomorrow toggle — planners see the stock trajectory and can anticipate shortfalls before they occur</li>
+          <li><span class="arrow">→</span>Automatic stock deduction when the MMU operator confirms actual quantities at the blast hole via the mobile app</li>
+          <li><span class="arrow">→</span>Visual low-stock alerts — colour-coded thresholds flag materials approaching critical levels</li>
+          <li><span class="arrow">→</span>Digital stocktake — supervisor confirms end-of-day closing stock and logs variances with predefined reason codes</li>
+          <li><span class="arrow">→</span>All stock movements post automatically to the ERP — full inventory compliance and audit readiness</li>
+        </ul>
+      </div>
+      <div class="wf-container">
+        <div class="wf-topbar"><div class="wf-dot r"></div><div class="wf-dot y"></div><div class="wf-dot g"></div><div class="wf-app-title">Stock Management — Plant 1054</div></div>
+        <div class="wf-body">
+          <div class="stock-header-row">
+            <div style="font-size:13px;font-weight:700;color:var(--text)">Daily Stock Position</div>
+            <div class="stock-toggle">
+              <button class="stock-toggle-btn">Yesterday</button>
+              <button class="stock-toggle-btn active">Today</button>
+              <button class="stock-toggle-btn">Tomorrow</button>
+            </div>
+          </div>
+          <div class="stock-kpis">
+            <div class="stock-kpi">
+              <div class="stock-kpi-label">Ammonium Nitrate</div>
+              <div class="stock-kpi-val">37.0 <span class="stock-kpi-unit">tonnes</span></div>
+              <div class="stock-kpi-bar"><div class="stock-kpi-fill fill-green" style="width:74%"></div></div>
+            </div>
+            <div class="stock-kpi">
+              <div class="stock-kpi-label">AN Emulsion</div>
+              <div class="stock-kpi-val">12.5 <span class="stock-kpi-unit">tonnes</span></div>
+              <div class="stock-kpi-bar"><div class="stock-kpi-fill fill-amber" style="width:35%"></div></div>
+            </div>
+            <div class="stock-kpi">
+              <div class="stock-kpi-label">Detonators</div>
+              <div class="stock-kpi-val">420 <span class="stock-kpi-unit">pcs</span></div>
+              <div class="stock-kpi-bar"><div class="stock-kpi-fill fill-green" style="width:84%"></div></div>
+            </div>
+          </div>
+          <table class="stock-tbl">
+            <thead><tr><th>Material</th><th>Opening</th><th>IBD In</th><th>Consumed</th><th>Planned</th><th>Closing</th></tr></thead>
+            <tbody>
+              <tr><td>AN Bulk</td><td>37.0 t</td><td>+10.0 t</td><td>-8.5 t</td><td>-5.0 t</td><td class="qty-up">33.5 t</td></tr>
+              <tr><td>AN Emulsion</td><td>12.5 t</td><td>+6.0 t</td><td>-5.2 t</td><td>-4.0 t</td><td class="qty-warn">9.3 t ⚠</td></tr>
+              <tr><td>Detonators</td><td>420 pcs</td><td>0</td><td>-80 pcs</td><td>-120 pcs</td><td class="qty-up">220 pcs</td></tr>
+              <tr><td>PETN</td><td>2.0 t</td><td>0</td><td>-0.8 t</td><td>-0.5 t</td><td class="qty-low">0.7 t ⚠</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 MOBILE -->
+    <div class="mod-panel" id="mod-mobile">
+      <div class="mod-left">
+        <div class="mod-eyebrow">Module 04</div>
+        <h3>Mobile App for Field Operators</h3>
+        <p class="mod-desc">A native iOS and Android mobile application purpose-built for MMU operators and field crew — designed to work completely offline in remote mine areas. The source of truth for actual delivery data and digital dockets.</p>
+        <ul class="mod-features">
+          <li><span class="arrow">→</span>Full offline capability — the app works with no internet connectivity. All data saved on device and auto-synced on reconnection</li>
+          <li><span class="arrow">→</span>Operators view their assigned jobs, customer details, planned products and blast site location from the app</li>
+          <li><span class="arrow">→</span>Capture actual quantities pumped at each blast hole — the legal record that drives inventory updates and invoicing</li>
+          <li><span class="arrow">→</span>Digital delivery docket — customer signs on the device at the blast site. Docket is locked and stored immediately on signature</li>
+          <li><span class="arrow">→</span>Blast ID creation directly from the mobile app — linked to ERP billing records for complete traceability</li>
+          <li><span class="arrow">→</span>On reconnection, the app syncs automatically — goods receipt posted, inventory updated, invoice triggered in ERP</li>
+        </ul>
+      </div>
+      <div class="wf-container" style="padding:24px;background:var(--bg-3)">
+        <div class="wf-topbar" style="border-radius:8px 8px 0 0;margin:-24px -24px 20px"><div class="wf-dot r"></div><div class="wf-dot y"></div><div class="wf-dot g"></div><div class="wf-app-title">MMU Operator Mobile App</div></div>
+        <div class="mob-device">
+          <div class="mob-notch">
+            <div class="mob-notch-cam"></div>
+            <div style="width:24px;height:4px;background:#444;border-radius:2px"></div>
+            <div class="mob-notch-cam"></div>
+          </div>
+          <div class="mob-screen">
+            <div class="mob-status">
+              <div><div class="mob-status-title">Job #BL-2024-108</div><div style="font-size:9px;color:rgba(255,255,255,0.75)">Ironridge Gold Mine · Pit 3</div></div>
+              <div class="mob-status-icon">☰</div>
+            </div>
+            <div class="mob-offline-bar">⚡ Offline Mode — Data saved on device</div>
+            <div class="mob-content">
+              <div class="mob-section-label">Job Details</div>
+              <div class="mob-field-row"><div class="mob-field-key">Customer</div><div class="mob-field-val">Ironridge Mining</div></div>
+              <div class="mob-field-row"><div class="mob-field-key">Blast ID</div><div class="mob-field-val">BL-IRM-88</div></div>
+              <div class="mob-field-row"><div class="mob-field-key">Shot No.</div><div class="mob-field-val">PIT3-088</div></div>
+              <div class="mob-section-label">Actual Quantities</div>
+              <div class="mob-field-row"><div class="mob-field-key">Planned AN</div><div class="mob-field-val">18.0 t</div></div>
+              <div class="mob-input-row"><div class="mob-input-key">✎ Actual AN</div><div class="mob-input-val">17.6 t</div></div>
+              <div class="mob-input-row"><div class="mob-input-key">✎ Actual ANE</div><div class="mob-input-val">10.2 t</div></div>
+              <div class="mob-docket-section">
+                <div class="mob-docket-title">📄 Digital Delivery Docket</div>
+                <div class="mob-sign-area">Tap to sign · Customer signature</div>
+              </div>
+              <div class="mob-submit-btn">Submit &amp; Lock Docket →</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 PORTAL -->
+    <div class="mod-panel" id="mod-portal">
+      <div class="mod-left">
+        <div class="mod-eyebrow">Module 05</div>
+        <h3>Customer Sales Portal</h3>
+        <p class="mod-desc">A secure web portal where your mining customers can view scheduled deliveries, actual quantities, signed digital dockets and billing status — in real time, without any manual coordination from your team.</p>
+        <ul class="mod-features">
+          <li><span class="arrow">→</span>Secure customer login — each customer sees only their own delivery schedules, dockets and billing data</li>
+          <li><span class="arrow">→</span>Upcoming delivery visibility — date, time, vehicle, products and quantities planned for each scheduled job</li>
+          <li><span class="arrow">→</span>Signed digital delivery dockets downloadable instantly — no waiting for paper copies to be couriered or scanned</li>
+          <li><span class="arrow">→</span>Actual vs planned quantity comparison per delivery — full transparency for reconciliation and dispute resolution</li>
+          <li><span class="arrow">→</span>Invoice tracking — customers see which deliveries have been billed and which dockets are pending their approval</li>
+          <li><span class="arrow">→</span>Automated notifications — customer receives SMS or email the day before each scheduled delivery</li>
+        </ul>
+      </div>
+      <div class="wf-container">
+        <div class="wf-topbar"><div class="wf-dot r"></div><div class="wf-dot y"></div><div class="wf-dot g"></div><div class="wf-app-title">Customer Portal</div></div>
+        <div style="padding:0">
+          <div class="portal-topbar">
+            <div class="portal-brand">⚡ <span>Field</span>Ops Customer Portal</div>
+            <div class="portal-user-info"><div class="portal-avatar">IR</div>Ironridge Mining Ltd</div>
+          </div>
+          <div style="padding:14px">
+            <div class="portal-kpi-row">
+              <div class="portal-kpi"><span class="portal-kpi-num">12</span><div class="portal-kpi-label">Deliveries This Month</div></div>
+              <div class="portal-kpi"><span class="portal-kpi-num">3</span><div class="portal-kpi-label">Upcoming Scheduled</div></div>
+              <div class="portal-kpi"><span class="portal-kpi-num">2</span><div class="portal-kpi-label">Pending Approval</div></div>
+            </div>
+            <div class="portal-section-title">Recent &amp; Upcoming Deliveries</div>
+            <div class="portal-delivery-card highlight">
+              <div class="portal-del-top"><div class="portal-del-id">DEL-2024-441 · AN Bulk 18t</div><span class="status-pill sp-pending" style="font-size:10px">Sign Required</span></div>
+              <div class="portal-del-meta"><span>07 May 2024 · 6:00 AM</span><span>Actual: 17.6t delivered</span></div>
+              <div class="portal-del-actions"><button class="portal-action-btn pab-outline">View Docket</button><button class="portal-action-btn pab-primary">✍ Sign &amp; Approve</button></div>
+            </div>
+            <div class="portal-delivery-card">
+              <div class="portal-del-top"><div class="portal-del-id">DEL-2024-442 · ANE 12t + Detonators</div><span class="status-pill sp-transit" style="font-size:10px">Tomorrow</span></div>
+              <div class="portal-del-meta"><span>08 May 2024 · 5:00 AM</span><span>MMU-02 · SMS sent ✓</span></div>
+              <div class="portal-del-actions"><button class="portal-action-btn pab-outline">View Schedule</button></div>
+            </div>
+            <div class="portal-delivery-card">
+              <div class="portal-del-top"><div class="portal-del-id">DEL-2024-438 · AN 22t</div><span class="status-pill sp-done" style="font-size:10px">Completed</span></div>
+              <div class="portal-del-meta"><span>05 May 2024</span><span>Invoice raised ✓</span></div>
+              <div class="portal-del-actions"><button class="portal-action-btn pab-outline">Download Docket</button><button class="portal-action-btn pab-orange">View Invoice</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 FORECAST -->
+    <div class="mod-panel" id="mod-forecast">
+      <div class="mod-left">
+        <div class="mod-eyebrow">Module 06</div>
+        <h3>AI-Powered Forecasting &amp; Planning</h3>
+        <p class="mod-desc">A rolling 6-month forecast engine that automatically generates planned material orders based on scheduled blast jobs — giving procurement and supply chain teams advance visibility with no manual spreadsheet work.</p>
+        <ul class="mod-features">
+          <li><span class="arrow">→</span>Rolling 6-month forecast auto-generated from scheduled blast jobs — no manual planning or spreadsheet required</li>
+          <li><span class="arrow">→</span>Planned orders created directly in the ERP system — procurement works from live system data, not emails</li>
+          <li><span class="arrow">→</span>Planner control panel — review, adjust or opt out of forecast lines per plant and per material</li>
+          <li><span class="arrow">→</span>Change detection — if a scheduled blast is modified or cancelled, the forecast updates automatically</li>
+          <li><span class="arrow">→</span>Supplier confirmation workflow — supply chain confirms accepted quantities and triggers automated supplier alerts</li>
+          <li><span class="arrow">→</span>Full audit trail on all forecast changes — who changed what, when and why — for compliance and traceability</li>
+        </ul>
+      </div>
+      <div class="wf-container">
+        <div class="wf-topbar"><div class="wf-dot r"></div><div class="wf-dot y"></div><div class="wf-dot g"></div><div class="wf-app-title">6-Month Forecast Dashboard — Plant 1054</div></div>
+        <div class="wf-body">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <div style="font-size:13px;font-weight:700;color:var(--text)">AN Forecast Overview</div>
+            <div class="forecast-tabs">
+              <button class="fc-tab active">AN</button>
+              <button class="fc-tab">ANE</button>
+              <button class="fc-tab">Detonators</button>
+            </div>
+          </div>
+          <div class="fc-legend">
+            <div class="fc-leg-item"><div class="fc-leg-dot fc-leg-orange"></div>Actual Delivered</div>
+            <div class="fc-leg-item"><div class="fc-leg-dot fc-leg-blue"></div>Forecast / Planned</div>
+          </div>
+          <div class="fc-chart-area">
+            <div class="fc-bar-wrap"><div class="fc-bar-group"><div class="fc-bar fc-actual" style="height:58px"></div></div><div class="fc-bar-label">Dec</div></div>
+            <div class="fc-bar-wrap"><div class="fc-bar-group"><div class="fc-bar fc-actual" style="height:44px"></div></div><div class="fc-bar-label">Jan</div></div>
+            <div class="fc-bar-wrap"><div class="fc-bar-group"><div class="fc-bar fc-actual" style="height:68px"></div></div><div class="fc-bar-label">Feb</div></div>
+            <div class="fc-bar-wrap"><div class="fc-bar-group"><div class="fc-bar fc-actual" style="height:52px"></div></div><div class="fc-bar-label">Mar</div></div>
+            <div class="fc-bar-wrap"><div class="fc-bar-group"><div class="fc-bar fc-planned" style="height:66px"></div></div><div class="fc-bar-label">Apr</div></div>
+            <div class="fc-bar-wrap"><div class="fc-bar-group"><div class="fc-bar fc-planned" style="height:74px"></div></div><div class="fc-bar-label">May</div></div>
+            <div class="fc-bar-wrap"><div class="fc-bar-group"><div class="fc-bar fc-planned" style="height:56px"></div></div><div class="fc-bar-label">Jun</div></div>
+            <div class="fc-bar-wrap"><div class="fc-bar-group"><div class="fc-bar fc-planned" style="height:80px"></div></div><div class="fc-bar-label">Jul</div></div>
+          </div>
+          <table class="fc-table">
+            <thead><tr><th>Material</th><th>May Forecast</th><th>Jun Forecast</th><th>Jul Forecast</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>AN Bulk</td><td class="fc-val-orange">220 t</td><td class="fc-val-orange">245 t</td><td class="fc-val-orange">210 t</td><td><span class="status-pill sp-transit">Pending</span></td></tr>
+              <tr><td>AN Emulsion</td><td class="fc-val-green">140 t</td><td class="fc-val-green">155 t</td><td class="fc-val-blue">160 t</td><td><span class="status-pill sp-done">Confirmed ✓</span></td></tr>
+              <tr><td>Detonators</td><td class="fc-val-orange">1,200 pcs</td><td class="fc-val-orange">1,400 pcs</td><td class="fc-val-orange">1,100 pcs</td><td><span class="status-pill sp-pending">Review</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section id="proof">
+  <div class="container">
+    <div class="eyebrow reveal">Our Experience</div>
+    <h2 style="font-size:clamp(28px,3.5vw,42px);font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:12px" class="reveal">A solution we have delivered —<br>at global scale.</h2>
+    <p style="font-size:15px;color:var(--text-2);max-width:560px;line-height:1.75;margin-bottom:0" class="reveal">This is not a concept. Our team designed and delivered this complete platform for a leading global explosives company — and it is live in production across four continents today.</p>
+    <div class="proof-grid reveal">
+      <div class="proof-card">
+        <span class="proof-num">4</span>
+        <h4>Global Regions Deployed</h4>
+        <p>Live across AusPac, North America, EMEA and Asia. Multi-language support across 7 languages with regional rollout completed within weeks per region.</p>
+      </div>
+      <div class="proof-card">
+        <span class="proof-num">15+</span>
+        <h4>Solution Modules Delivered</h4>
+        <p>Full platform covering blast scheduling, delivery automation, inventory management, mobile field app, customer portal, forecasting, digital docketing and audit trail.</p>
+      </div>
+      <div class="proof-card">
+        <span class="proof-num">100%</span>
+        <h4>ERP Integrated</h4>
+        <p>Every transaction flows directly into the core ERP system. Goods receipts, inventory movements, planned orders and invoices — all automated, with zero manual entry.</p>
+      </div>
+      <div class="proof-card">
+        <span class="proof-num">0</span>
+        <h4>Paper Dockets in the Field</h4>
+        <p>All delivery documentation is captured digitally at the blast hole. Signed, stored and accessible instantly — eliminating paper, delays and reconciliation disputes.</p>
+      </div>
+      <div class="proof-card">
+        <span class="proof-num">Offline</span>
+        <h4>Built for Remote Operations</h4>
+        <p>The mobile application works fully offline in areas with no connectivity — designed specifically for remote mine sites and quarries where internet access is unreliable.</p>
+      </div>
+      <div class="proof-card">
+        <span class="proof-num">Same day</span>
+        <h4>Billing from Field to ERP</h4>
+        <p>From digital signature at the blast hole to ERP invoice — the complete cycle runs the same day. The delivery docket is the source of truth for billing.</p>
+      </div>
+    </div>
+    <div class="proof-statement reveal">
+      <div class="proof-statement-text">"Our team has architected, designed and delivered this platform end to end — from on-site discovery workshops to live production deployment across four global regions. The domain knowledge, solution architecture and delivery experience are ready to be applied for your organisation."</div>
+      <div class="proof-statement-meta">
+        <div class="proof-meta-item">
+          <div class="proof-meta-icon">🏭</div>
+          <div class="proof-meta-text"><h5>Industry Experience</h5><p>Direct, hands-on experience in explosives manufacturing, blast scheduling and field supply execution across global mining operations.</p></div>
+        </div>
+        <div class="proof-meta-item">
+          <div class="proof-meta-icon">🔗</div>
+          <div class="proof-meta-text"><h5>ERP Integration Expertise</h5><p>Deep experience integrating field operations platforms with major ERP systems — goods receipt, inventory, billing and planned orders.</p></div>
+        </div>
+        <div class="proof-meta-item">
+          <div class="proof-meta-icon">📱</div>
+          <div class="proof-meta-text"><h5>Mobile & Offline Engineering</h5><p>Proven capability in building enterprise mobile applications that work in remote, low-connectivity environments with reliable offline sync.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section id="offer">
+  <div class="container">
+    <div class="eyebrow reveal">How We Work With You</div>
+    <h2 style="font-size:clamp(28px,3.5vw,42px);font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:12px" class="reveal">A collaborative, discovery-first approach.</h2>
+    <p style="font-size:15px;color:var(--text-2);max-width:640px;line-height:1.75;margin-bottom:0" class="reveal">Every explosives company has a unique set of operations, customers and processes. We do not offer a one-size-fits-all product. We begin by understanding your specific business — and design a solution that fits your operations, not the other way around.</p>
+    <div class="offer-grid reveal">
+      <div class="offer-card">
+        <div class="offer-step">01</div>
+        <h3>Discovery & Understanding</h3>
+        <p>We begin with a detailed conversation about your current field operations — how you schedule blasts, manage deliveries, track inventory and bill customers. We walk through your specific challenges and requirements before proposing anything.</p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-step">02</div>
+        <h3>Solution Design & Demo</h3>
+        <p>Based on your requirements, we design a tailored solution architecture and showcase a working prototype — with screens mapped to your specific workflows and data. You see exactly what will be built before any development begins.</p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-step">03</div>
+        <h3>Phased Implementation</h3>
+        <p>We implement module by module, starting with the area of highest operational value for your organisation. Each phase is validated with your team before the next begins — ensuring the solution delivers real value at every stage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>Let's start with a conversation.</h2>
+        <p>We would be glad to learn about your field operations and share how this platform has transformed similar operations at a global scale. No obligation — just an open discussion.</p>
+        <button class="cta-btn" onclick="window.location.href='mailto:consulting@papertheorynet.com?subject=Field Operations Platform — Discussion Request'">
+          Request a Discussion →
+        </button>
+        <div class="cta-contact-alt">Or write to us: <a href="mailto:consulting@papertheorynet.com">consulting@papertheorynet.com</a></div>
+      </div>
+      <div class="cta-right">
+        <div class="cta-feature">
+          <div class="cta-feature-icon">🎯</div>
+          <div><h5>Tailored to your operations</h5><p>We design around your specific field workflows, materials and customer relationships — not a generic template.</p></div>
+        </div>
+        <div class="cta-feature">
+          <div class="cta-feature-icon">🌏</div>
+          <div><h5>Proven at global scale</h5><p>This solution is live in production across four continents for a leading global explosives company.</p></div>
+        </div>
+        <div class="cta-feature">
+          <div class="cta-feature-icon">🔗</div>
+          <div><h5>ERP & system agnostic</h5><p>We design to integrate with your existing ERP and technology landscape — no forced system changes.</p></div>
+        </div>
+        <div class="cta-feature">
+          <div class="cta-feature-icon">📍</div>
+          <div><h5>India-based team, global experience</h5><p>Onsite delivery experience across Australia, Germany and the US with execution capability from India.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ── MODULE IDs in order ── */
+const MOD_IDS = ['scheduling','ibd','stock','mobile','portal','forecast'];
+let modIndex  = 0;
+let modTimer  = null;
+let modInterval = null;
+const MOD_DURATION = 7000;   // 7s per module
+const MOD_TICK     = 50;     // progress bar update interval
+
+/* ── FLOW (before/after) ── */
+let flowCurrent = 'before';
+let flowTimer   = null;
+let flowInterval= null;
+const FLOW_DURATION = 6000;  // 6s per state
+const FLOW_TICK     = 50;
+
+function showMod(id, btn) {
+  document.querySelectorAll('.mod-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.mod-tab').forEach(b => {
+    b.classList.remove('active');
+    const pb = b.querySelector('.mod-tab-progress');
+    if (pb) { pb.style.width = '0%'; pb.style.opacity = '0'; }
+  });
+  document.getElementById('mod-' + id).classList.add('active');
+  btn.classList.add('active');
+  const pb = btn.querySelector('.mod-tab-progress');
+  if (pb) pb.style.opacity = '1';
+  modIndex = MOD_IDS.indexOf(id);
+}
+
+function startModProgress() {
+  const btn = document.getElementById('mod-tab-' + MOD_IDS[modIndex]);
+  if (!btn) return;
+  const pb = btn.querySelector('.mod-tab-progress');
+  if (!pb) return;
+  pb.style.transition = 'none';
+  pb.style.width = '0%';
+  pb.style.opacity = '1';
+
+  let elapsed = 0;
+  clearInterval(modInterval);
+  modInterval = setInterval(() => {
+    elapsed += MOD_TICK;
+    const pct = Math.min((elapsed / MOD_DURATION) * 100, 100);
+    pb.style.transition = 'none';
+    pb.style.width = pct + '%';
+    if (elapsed >= MOD_DURATION) {
+      clearInterval(modInterval);
+      nextMod();
+    }
+  }, MOD_TICK);
+}
+
+function nextMod() {
+  modIndex = (modIndex + 1) % MOD_IDS.length;
+  const id  = MOD_IDS[modIndex];
+  const btn = document.getElementById('mod-tab-' + id);
+  if (btn) showMod(id, btn);
+  startModProgress();
+}
+
+function resetModTimer() {
+  clearInterval(modInterval);
+  clearTimeout(modTimer);
+  // Restart progress for newly clicked tab
+  startModProgress();
+}
+
+/* ── FLOW timer ── */
+function showFlow(type) {
+  const btnBefore = document.getElementById('btn-before');
+  const btnAfter  = document.getElementById('btn-after');
+  const panelBefore = document.getElementById('panel-before');
+  const panelAfter  = document.getElementById('panel-after');
+  if (type === 'before') {
+    btnBefore.className = 'flow-btn active-before';
+    btnAfter.className  = 'flow-btn';
+    panelBefore.classList.add('active');
+    panelAfter.classList.remove('active');
+    updateFlowBtnHints('before');
+  } else {
+    btnAfter.className  = 'flow-btn active-after';
+    btnBefore.className = 'flow-btn';
+    panelAfter.classList.add('active');
+    panelBefore.classList.remove('active');
+    updateFlowBtnHints('after');
+  }
+  flowCurrent = type;
+}
+
+function updateFlowBtnHints(active) {
+  const hintBefore = document.querySelector('#btn-before .flow-btn-hint');
+  const hintAfter  = document.querySelector('#btn-after .flow-btn-hint');
+  if (hintBefore) hintBefore.textContent = active === 'before' ? 'currently showing' : 'click to view';
+  if (hintAfter)  hintAfter.textContent  = active === 'after'  ? 'currently showing' : 'click to view';
+}
+
+function startFlowProgress() {
+  const bar       = document.getElementById('flow-timer-bar');
+  const countdown = document.getElementById('flow-countdown');
+  if (!bar) return;
+  let elapsed = 0;
+  clearInterval(flowInterval);
+  flowInterval = setInterval(() => {
+    elapsed += FLOW_TICK;
+    const pct = Math.min((elapsed / FLOW_DURATION) * 100, 100);
+    bar.style.setProperty('--pct', pct + '%');
+    // Update ::after via inline style hack
+    bar.innerHTML = `<span style="display:block;height:100%;width:${pct}%;background:var(--orange);border-radius:2px;transition:none"></span>`;
+    const remaining = Math.max(0, Math.ceil((FLOW_DURATION - elapsed) / 1000));
+    if (countdown) countdown.textContent = remaining;
+    if (elapsed >= FLOW_DURATION) {
+      clearInterval(flowInterval);
+      const next = flowCurrent === 'before' ? 'after' : 'before';
+      showFlow(next);
+      startFlowProgress();
+    }
+  }, FLOW_TICK);
+}
+
+function resetFlowTimer() {
+  clearInterval(flowInterval);
+  startFlowProgress();
+}
+
+/* ── SCROLL REVEAL ── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ── START everything on load ── */
+window.addEventListener('load', () => {
+  // Start flow auto-toggle
+  updateFlowBtnHints('before');
+  startFlowProgress();
+  // Start module auto-cycle — delay 1s to let page settle
+  setTimeout(() => startModProgress(), 1000);
+});
+</script>
+</body>
+</html>
